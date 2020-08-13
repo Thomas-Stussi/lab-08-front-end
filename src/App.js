@@ -17,18 +17,21 @@ class App extends React.Component {
   }
 
   render() {
+
     return (
       <div className="App">
         <header className="App-header">
           <h2>foods:</h2>
+        </header>
+        <main>
           {
             this.state.foods.map((food) => {
-              return <div style={{ margin: 5, padding: 5, border: 'solid 3px white'}}>
-               Name: {food.name} Deliciousness: {food.deliciousness} Vegetarian: {food.can_be_vegetarian} Meal: {food.meal}
+              return <div className="foodItems" style={{ margin: 5, padding: 5, border: 'solid 3px white'}}>
+               Name: {food.name} Deliciousness: {food.deliciousness} <br/>Meal: {food.meal}
               </div>
             })
           }
-        </header>
+        </main>
         </div>
     )
 }
