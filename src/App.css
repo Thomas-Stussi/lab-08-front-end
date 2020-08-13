@@ -46,9 +46,10 @@ main {
 .foodItems {
   display: block;
   height: 200px;
-  width: 100px;
+  width: 150px;
 }
 .picture {
-  height: 50px;
-  width: 75px;
+  height: 75px;
+  width: 100px;
+  padding: 5px;
 }
