@@ -59,7 +59,7 @@ export default class CreatePage extends Component {
                 <form  className="content" onSubmit={this.handleSubmit}>
                     <label>
                         Name: 
-                        <input onChange={this.handleStringChange} value={this.state.name} />
+                        <input onChange={this.handleNameChange} value={this.state.name} />
                     </label>
                     <label>
                         Deliciousness: 
