@@ -27,7 +27,8 @@ class App extends React.Component {
           {
             this.state.foods.map((food) => {
               return <div className="foodItems" style={{ margin: 5, padding: 5, border: 'solid 3px white'}}>
-               Name: {food.name} <br/> Deliciousness: {food.deliciousness} <br/>Meal: {food.meal} <br/> Vegetarian?: {food.can_be_vegetarian ? 'True' : 'False'}
+               Name: {food.name} <br/> Deliciousness: {food.deliciousness} <br/>Meal: {food.meal} <br/> Vegetarian?: {food.can_be_vegetarian ? 'True' : 'False'} <br/> <img className="picture" src={food.img} />
+            
               </div>
             })
           }
