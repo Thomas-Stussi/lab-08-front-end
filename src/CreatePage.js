@@ -70,7 +70,6 @@ export default class CreatePage extends Component {
                         <input type="checkbox" onChange={this.handleVeggieChange} value={this.state.can_be_vegetarian} />
                         Check for True
                     </label>
-                    <br/>
                     <label>
                         Meal: 
                         <select onChange={this.handleMealChange} value={this.state.meal}>
@@ -80,7 +79,6 @@ export default class CreatePage extends Component {
                             <option value="snack">Snack</option>
                         </select>
                     </label>
-                    <br/>
                     <label>
                         Image URL: 
                         <input onChange={this.handleImgChange} value={this.state.img} />
