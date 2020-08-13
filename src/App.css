@@ -1,3 +1,7 @@
+.App {
+  width: 100vh;
+}
+
 a {
   color: white;
   opacity: .8;
@@ -21,12 +25,12 @@ a {
   font-size: calc(10px + 2vmin);
   color: white;
   height: 15vh;
-  min-width: 120%;
+  min-width: 133.25vh;
 }
 
 body {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 5fr;
   min-width: 100%;
 
 }
@@ -37,9 +41,10 @@ main {
   padding-left: 10%;
   padding-right: 10%;
   min-height: 100vh;
-  min-width: 100vh;
-  justify-content: center;
+  min-width: 80vh;
+  justify-content: space-around;
   background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
+  align-content: space-around
 }
 
 .picture {
@@ -65,4 +70,8 @@ li {
 
 label {
   padding: 5px;
+}
+
+.sidebar {
+  background-color: rgb(38, 42, 43);
 }
