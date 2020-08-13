@@ -2,7 +2,7 @@
 
 import request from 'superagent';
 
-const URL = 'https://git.heroku.com/my-first-sql-2020.git';
+const URL = 'https://my-first-sql-2020.herokuapp.com';
 
 export function fetchFoods() {
     return request.get(`${URL}/foods`);
