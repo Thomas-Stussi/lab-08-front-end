@@ -42,7 +42,12 @@ export default class CreatePage extends Component {
     }
 
     handleVeggieChange = e => {
-       this.setState({ can_be_vegetarian: true });
+        if(e.target.checked) {
+            this.setState({ can_be_vegetarian: true });
+        } else {
+            this.setState({ can_be_vegetarian: false });
+        }
+       
     }
 
     handleMealChange = e => {
