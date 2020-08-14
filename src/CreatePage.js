@@ -4,9 +4,9 @@ import './App.css';
 
 export default class CreatePage extends Component {
     state = {
-        name: 'perogis',
+        name: 'pepperoni',
         deliciousness: 6,
-        can_be_vegetarian: true,
+        can_be_vegetarian: false,
         meal: 'dinner',
         img: 'https://flaticons.net/icon.php?slug_category=people&slug_icon=chef',
     }
@@ -23,12 +23,13 @@ export default class CreatePage extends Component {
         });
 
         this.setState({
-            name: 'perogis',
+            name: 'pepperoni',
             deliciousness: 6,
-            can_be_vegetarian: true,
+            can_be_vegetarian: false,
             meal: 'dinner',
             img: 'https://flaticons.net/icon.php?slug_category=people&slug_icon=chef',
         })
+        
         this.props.history.push('/');
     }
 
@@ -41,7 +42,7 @@ export default class CreatePage extends Component {
     }
 
     handleVeggieChange = e => {
-        this.setState({ can_be_vegetarian: e.target.value });
+       this.setState({ can_be_vegetarian: true });
     }
 
     handleMealChange = e => {
@@ -67,7 +68,7 @@ export default class CreatePage extends Component {
                     </label>
                     <label>
                         Possibly Vegetarian?: 
-                        <input type="checkbox" onChange={this.handleVeggieChange} value={this.state.can_be_vegetarian} />
+                        <input type="checkbox" onChange={this.handleVeggieChange} />
                         Check for True
                     </label>
                     <label>
