@@ -2,9 +2,7 @@
 
 import request from 'superagent';
 
-const URL = 'http://localhost:3000';
-
-//process.env.REACT_APP_API_URL || 'https://my-first-sql-2020.herokuapp.com'
+const URL = process.env.REACT_APP_API_URL || 'https://my-first-sql-2020.herokuapp.com';
 
 export function fetchFoods() {
     return request.get(`${URL}/foods`);
