@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { fetchFood, deleteFood, updateFood, fetchMeals } from './foods-api.js';
 
+
 export default class DetailPage extends Component {
     state = {
         meals: [],
@@ -45,7 +46,6 @@ export default class DetailPage extends Component {
         });
 
         const updatedFood = await fetchFood(this.props.match.params.id)
-        console.log(updatedFood);
 
         this.setState({
             name: 'pepperoni',
@@ -122,7 +122,7 @@ export default class DetailPage extends Component {
                     </label>
                     <label>
                         Meal: 
-                        <select onChange={this.handleMealChange} value={this.state.meal}>
+                        <select id='select' onChange={this.handleMealChange} value={this.state.meal_name}>
                             {
                                 this.state.meals.map((meal) => <option value={meal.id}>{meal.meal}</option>)
                             }
