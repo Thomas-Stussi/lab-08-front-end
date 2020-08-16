@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { createFood } from './foods-api.js';
+import { createFood, fetchMeals } from './foods-api.js';
 import './App.css';
 
 export default class CreatePage extends Component {
@@ -7,8 +7,17 @@ export default class CreatePage extends Component {
         name: 'pepperoni',
         deliciousness: 6,
         can_be_vegetarian: false,
-        meal: 'dinner',
+        meal_id: 3,
         img: 'https://flaticons.net/icon.php?slug_category=people&slug_icon=chef',
+        meals: []
+    }
+
+    componentDidMount = async () => {
+        const mealsData = await fetchMeals();
+
+        this.setState({
+            meals: mealsData.body
+        })
     }
 
     handleSubmit = async (e) => {
@@ -18,15 +27,15 @@ export default class CreatePage extends Component {
             name: this.state.name,
             deliciousness: this.state.deliciousness,
             can_be_vegetarian: this.state.can_be_vegetarian,
-            meal: this.state.meal,
             img: this.state.img,
+            meal_id: this.state.meal_id
         });
 
         this.setState({
             name: 'pepperoni',
             deliciousness: 6,
             can_be_vegetarian: false,
-            meal: 'dinner',
+            meal_id: 3,
             img: 'https://flaticons.net/icon.php?slug_category=people&slug_icon=chef',
         })
         
@@ -51,7 +60,7 @@ export default class CreatePage extends Component {
     }
 
     handleMealChange = e => {
-        this.setState({ meal: e.target.value });
+        this.setState({ meal_id: e.target.value });
     }
 
     handleImgChange = e => {
@@ -79,10 +88,9 @@ export default class CreatePage extends Component {
                     <label>
                         Meal: 
                         <select onChange={this.handleMealChange} value={this.state.meal}>
-                            <option value="breakfast">Breakfast</option>
-                            <option value="lunch">Lunch</option>
-                            <option value="dinner">Dinner</option>
-                            <option value="snack">Snack</option>
+                            {
+                                this.state.meals.map((meal) => <option value={meal.id}>{meal.meal}</option>)
+                            }
                         </select>
                     </label>
                     <label>

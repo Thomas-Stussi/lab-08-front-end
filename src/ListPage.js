@@ -24,7 +24,7 @@ class ListPage extends React.Component {
           {
             this.state.foods.map((food) => {
               return <Link to={`/detail/${food.id}`} key={`${food.id}-${food.name}`} className="foodItems">
-               Name: {food.name} <br/> Deliciousness: {food.deliciousness} <br/>Meal: {food.meal} <br/> Vegetarian?: {food.can_be_vegetarian ? 'True' : 'False'} <br/> <img className="picture" src={food.img} />
+               Name: {food.name} <br/> Deliciousness: {food.deliciousness} <br/>Meal: {food.meal_name} <br/> Vegetarian?: {food.can_be_vegetarian ? 'True' : 'False'} <br/> <img className="picture" src={food.img} />
             
               </Link>
             })

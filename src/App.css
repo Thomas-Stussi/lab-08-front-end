@@ -50,10 +50,9 @@ main {
 }
 
 .detailImage {
-  height: 300px;
-  width: 400px;
-  padding-top: 20px;
-  padding-left: 10px;
+  height: 125px;
+  width: 150px;
+  padding-right: 10px;
 }
 
 li {
