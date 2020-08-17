@@ -30,6 +30,13 @@ export default class DetailPage extends Component {
             meal_id: matchingMeal.id,
             meal_name: matchingMeal.meal
         })
+
+        const checkbox = document.getElementById("veggieCheck");
+        if (this.state.can_be_vegetarian) {
+            checkbox.checked = true;
+        }
+        const dropdown = document.getElementById("select")
+        dropdown.value = this.state.meal_id
       }
 
       handleSubmit = async (e) => {
@@ -42,7 +49,8 @@ export default class DetailPage extends Component {
             deliciousness: this.state.deliciousness,
             can_be_vegetarian: this.state.can_be_vegetarian,
             img: this.state.img,
-            meal_id: this.state.meal_id
+            meal_id: this.state.meal_id,
+            meal_name: this.state.meal_name
         });
 
         const updatedFood = await fetchFood(this.props.match.params.id)
@@ -55,6 +63,8 @@ export default class DetailPage extends Component {
             img: 'https://flaticons.net/icon.php?slug_category=people&slug_icon=chef',
             food: updatedFood.body
         })
+
+        this.props.history.push('/');
     } catch(e) {
         console.log(e.message)
     }
@@ -74,7 +84,6 @@ export default class DetailPage extends Component {
         } else {
             this.setState({ can_be_vegetarian: false });
         }
-       
     }
 
     handleMealChange = e => {
@@ -117,14 +126,14 @@ export default class DetailPage extends Component {
                     </label>
                     <label>
                         Possibly Vegetarian?: 
-                        <input type="checkbox" onChange={this.handleVeggieChange} />
+                        <input type="checkbox" id="veggieCheck" onChange={this.handleVeggieChange} />
                         Check for True
                     </label>
                     <label>
                         Meal: 
-                        <select id='select' onChange={this.handleMealChange} value={this.state.meal_name}>
+                        <select id="select" onChange={this.handleMealChange} value={this.state.meal.id}>
                             {
-                                this.state.meals.map((meal) => <option value={meal.id}>{meal.meal}</option>)
+                                this.state.meals.map((meal) => <option name={meal.meal} value={meal.id}>{meal.meal}</option>)
                             }
                         </select>
                     </label>
