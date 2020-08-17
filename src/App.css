@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
+
 a {
+  font-family: 'Griffy', cursive;
   color: white;
   opacity: .8;
   border: 'solid 3px white';
@@ -13,6 +16,7 @@ a {
 
 
 .App-header {
+  font-family: 'Griffy', cursive;
   background-color: #282c34;
   display: flex;
   flex-direction: column;
@@ -40,7 +44,7 @@ main {
   min-width: 100vh;
   justify-content: space-around;
   background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
-  align-content: space-around
+  align-content: space-around;
 }
 
 .picture {
