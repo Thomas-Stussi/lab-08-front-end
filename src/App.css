@@ -31,8 +31,7 @@ a {
 body {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  min-width: 100%;
-
+  min-width: 100vh;
 }
 
 main {
