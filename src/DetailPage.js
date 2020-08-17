@@ -19,7 +19,6 @@ export default class DetailPage extends Component {
         const mealsData = await fetchMeals();
         const matchingMeal = mealsData.body.find(meal => meal.meal === data.body.meal_name)
 
-    
         this.setState({
             meals: mealsData.body,
             food: data.body,
@@ -95,14 +94,12 @@ export default class DetailPage extends Component {
     }
 
     handleDelete = async () => {
-        console.log(this.props.match.params.id);
         try{
             await deleteFood(this.props.match.params.id);
             this.props.history.push('/');
         } catch(e) {
             console.log(e.message);
-        }
-        
+        }   
     }
     
     render() {
